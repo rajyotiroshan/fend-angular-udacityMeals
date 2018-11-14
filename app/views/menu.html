@@ -3,7 +3,7 @@
 		<div class="col-md-4">
 			<h4>{{item.name}}</h4>
 			<p>Rating::{{item.rating}}<span ng-if = "item.rating > 4.0" ng-class="{highlight:item.rating>4.5}">-people love this item.</span></p>
-			<p>Image: <img src={{item.img}}></p>
+			<img class="img_item" ng-src={{item.img}} alt={{item.name}}>
 			<p>
 				<textarea ng-model="item.newReview" name="item.review" rows="3" cols="40"></textarea>
 			</p>
@@ -11,6 +11,8 @@
 				{{item.newReview}}
 				<span ng-if="!item.newReview">why not write a new review?</span>
 			</p>
+			<button class="rating_modify" ng-click="menu.increament(item)">+</button>
+			<button class="rating_modify" ng-click="menu.decreament(item)">-</button>
 		</div>
 	</div>
 </div>

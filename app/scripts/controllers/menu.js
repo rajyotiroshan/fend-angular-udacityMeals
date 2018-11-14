@@ -30,5 +30,13 @@ angular.module('udaciMealsApp')
   		img:"images/yeoman.png",
   		calories: 200,
   		rating: 5
-  	}]
+  	}];
+
+  	this.increament = function(item){
+  		item.rating = ((item.rating*10) + 1)/10;
+  	}
+
+  	this.decreament = function(item) {
+  		item.rating = ( (item.rating*10) - 1)/10;
+  	}
   });
